@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="classifier">
+    <div class="overlay-text">
+        <h2>COSMONOVA</h2>
+        <h3>Types or Categories of galaxy images we are identifying</h3>
+        <a href="{{ url_for('static', filename='images/0.jpeg') }}" class="button" target="_blank">Disturbed</a>
+        <a href="{{ url_for('static', filename='images/1.jpg') }}" class="button" target="_blank">Merging</a>
+        <a href="{{ url_for('static', filename='images/2.png') }}" class="button" target="_blank">Round Smooth</a>
+        <a href="{{ url_for('static', filename='images/3.png') }}" class="button" target="_blank">In-between round smooth</a>
+        <a href="{{ url_for('static', filename='images/4.png') }}" class="button" target="_blank">Cigar round smooth</a>
+        <a href="{{ url_for('static', filename='images/5.png') }}" class="button" target="_blank">Barred Spiral</a>
+        <a href="{{ url_for('static', filename='images/6.png') }}" class="button" target="_blank">Unbarred tight spiral</a>
+        <a href="{{ url_for('static', filename='images/7.png') }}" class="button" target="_blank">Unbarred Loose spiral</a>
+        <a href="{{ url_for('static', filename='images/8.png') }}" class="button" target="_blank">Edge-on without bulge</a>
+        <a href="{{ url_for('static', filename='images/9.png') }}" class="button" target="_blank">Edge-on with bulge</a>
+        <!-- <a href="{{ url_for('static', filename='images/galaxy10_example.webp') }}" class="button" target="_blank">View Example Image</a> -->
+    </div>
+    <div class="container">
+        <h1>Upload an Image of a Galaxy</h1>
+        <p></p>
+        <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" class="file-input">
+            <input type="submit" value="Upload" class="button">
+        </form>
+        <p></p>
+        <a href="{{ url_for('frontpage') }}" class="button">Back to Front Page</a>
+    </div>
+</body>
+</html>

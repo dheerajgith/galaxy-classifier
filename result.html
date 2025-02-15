@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <img src="{{ url_for('send_file', filename=filename) }}" alt="Uploaded Image" class="small-image">
+        <h2>Predicted Class: {{ label }}</h2>
+        <h3>Raw Predictions:</h3>
+        <ul>
+            {% for prediction in formatted_predictions %}
+                <li>{{ prediction }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('home') }}" class="button">Back to Classifier</a>
+    </div>
+</body>
+</html>
